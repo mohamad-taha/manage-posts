@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ST-L2-Task5</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <svg viewBox="25 25 50 50" id="loader">
+      <circle r="20" cy="50" cx="50"></circle>
+    </svg>
+
+    <main>
+      <header>
+        <div>
+          <h2>Manage Posts</h2>
+          <p>Lorem ipsum dolor sit, amet consectetur elit.</p>
+        </div>
+        <button class="btn-primary" onclick="togglePostModal()">
+          Add Post
+        </button>
+      </header>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="table-content"></tbody>
+      </table>
+
+      <div class="post-modal">
+        <form>
+          <h2>Add Post</h2>
+          <div class="input-box">
+            <input
+              type="text"
+              placeholder="Title"
+              name="title"
+              id="nameInput"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <input
+              type="text"
+              placeholder="Description"
+              name="description"
+              id="descInput"
+              required
+            />
+          </div>
+          <div class="form-btns">
+            <button
+              type="button"
+              class="btn-primary"
+              style="background-color: black"
+              onclick="togglePostModal()"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+      <div id="message"></div>
+    </main>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

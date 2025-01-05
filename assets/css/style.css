@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: fira code;
+}
+:root {
+  --primary: #253a7b;
+}
+.btn-primary {
+  transition: 300ms;
+  border-radius: 6px;
+  outline: 0;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: rgb(53, 53, 178) !important;
+}
+.btn-primary:first-child:hover {
+  background: rgb(55, 55, 60) !important;
+}
+main {
+  padding: 32px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  button {
+    width: 140px;
+    height: 35px;
+    font-size: 13px;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 14px;
+    color: #000000c0;
+  }
+}
+
+.post-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  &.post-modal-active {
+    display: flex;
+  }
+  form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #fff;
+    padding: 50px 25px;
+    border-radius: 6px;
+    .input-box {
+      width: 100%;
+      border: 1px solid #666;
+      border-radius: 4px;
+      padding: 10px 16px;
+      font-size: 16px;
+      transition: 0.5s;
+      &:focus-within {
+        border-color: var(--primary);
+      }
+      input {
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .form-btns {
+    display: flex;
+    gap: 12px;
+    align-self: flex-end;
+  }
+  button {
+    width: 100px;
+    height: 40px;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  th,
+  td {
+    padding: 12px;
+    text-align: start;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  td {
+    padding: 16px 12px;
+  }
+  th {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .table-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    button:hover {
+      background: rgb(53, 53, 178);
+    }
+    .delete-btn:hover {
+      background: rgb(178, 53, 61);
+    }
+    button {
+      transition: 300ms;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      width: 34px;
+      height: 36px;
+      border-radius: 6px;
+      background-color: var(--primary);
+      cursor: pointer;
+      img {
+        width: 20px;
+      }
+      &.delete-btn {
+        background-color: rgb(129, 6, 6);
+      }
+    }
+  }
+}
+svg {
+  width: 1.5em;
+  transform-origin: center;
+  animation: rotate4 2s linear infinite;
+  display: none;
+}
+
+circle {
+  fill: none;
+  stroke: hsl(214, 97%, 59%);
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate4 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash4 {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}
+
+#message {
+  position: absolute;
+  bottom: 10px;
+  width: 300px;
+  height: 50px;
+  background-color: green;
+  border-radius: 4px;
+  transition: 300ms;
+  box-shadow: 0 0 10px 2px green;
+  transform: scale(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
