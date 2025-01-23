@@ -50,6 +50,8 @@ postForm.addEventListener("submit", async (e) => {
     }
     showPosts();
     if (response.ok) {
+      message.style.background = "green";
+      message.style = "box-shadow: 0 0 10px 2px green";
       message.innerHTML = update
         ? "task updated successfully"
         : "task added successfully";
